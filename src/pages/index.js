@@ -31,11 +31,11 @@ export default function Home() {
       </div>
 
       {/* TRENDING CARDS */}
-      <div className="flex">``
+      <div className="flex">
         {dummyData.map((element) => (
-          <div className="mt-10 relative">
+          <div className="mt-10 relative w-[400px] h-[400px]">
             <img
-              className="w-[900px] border rounded-2xl"
+              className="border rounded-2xl"
               src={element.cover_image}
               alt=""
             />
@@ -45,9 +45,12 @@ export default function Home() {
                   {element.tag_list[0]}
                 </p>
               </div>
+              {/* <div style={{ backgroundImage: `url(${element.cover_image})` }} /> */}
               <div>
                 <div className="pb-[24px]">
-                  <h2 className="text-2xl font-semibold">{element.title}</h2>
+                  <h2 className="text-2xl font-semibold text-white">
+                    {element.title}
+                  </h2>
                 </div>
                 <div>
                   <p className="text-[#97989F]">
