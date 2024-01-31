@@ -12,12 +12,9 @@ export const Header = () => {
         <a href="">Blog</a>
         <a href="">Contact</a>
       </div>
-      <div>
-        <input
-          type="text"
-          placeholder="Search"
-          className="bg-[#F4F4F5] px-3 py-1 rounded-md"
-        />
+      <div className="flex items-center bg-[#F4F4F5] px-3 py-1 rounded-md">
+        <input type="text" placeholder="Search" className="bg-[#F4F4F5]" />
+        <FindIcon />
       </div>
     </div>
   );

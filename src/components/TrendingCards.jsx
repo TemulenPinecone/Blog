@@ -2,11 +2,11 @@ import { dummyData } from "@/data/dummyData";
 
 export const TrendingCards = () => {
   return (
-    <div className="flex flex-col mt-5">
+    <div className="flex flex-col mt-16 px-3">
       <div>
-        <p className="text-2xl font-bold">Tranding</p>
+        <p className="text-2xl font-bold">Trending</p>
       </div>
-      <div className="flex">
+      <div className="flex justify-center items-center">
         {dummyData.map((element) => (
           <div className="mt-10 relative w-[25%] h-[200px] mx-[2px]">
             <img
