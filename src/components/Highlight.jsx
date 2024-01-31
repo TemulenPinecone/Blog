@@ -1,15 +1,15 @@
 export function Hightlight(highlight) {
   console.log(`HIGHLIGHT dotroooooo`, highlight);
   // console.log(`HIGHLIGHT`, highlight);
-  // const hlNews = highlight.highlight;
+  const hlNews = highlight.highlight;
   // console.log(`HLNEWS`, hlNews);
   return (
     <div
       className="mt-10 h-[270px] relative mx-3"
-      // style={{ backgroundImage: `url(${hlNews[0].cover_image})` }}
+      style={{ backgroundImage: `url(${hlNews[0].cover_image})` }}
     >
       {/* <img src={`${highlight}`} alt="" className="h-[500px] border" /> */}
-      {/* <div className="bg-white h-[270px] w-[500px] rounded-lg absolute top-[50%] left-[5%] flex flex-col justify-evenly p-[40px]">
+      <div className="bg-white h-[270px] w-[500px] rounded-lg absolute top-[50%] left-[5%] flex flex-col justify-evenly p-[40px]">
         <div>
           <p className="border rounded-lg text-white bg-[#4B6BFB] inline-flex p-1 px-4">
             Technology
@@ -25,7 +25,7 @@ export function Hightlight(highlight) {
             <p className="text-[#97989F]">August 20, 2022</p>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

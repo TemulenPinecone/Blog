@@ -7,16 +7,16 @@ import { AllBlogPost } from "@/components/AllBlogPost";
 import { Footer } from "@/components/Footer";
 
 export default function Home(props) {
-  const { highlight } = props;
-  console.log(`INSIDE HIGHLIGHT`, highlight);
-  console.log(`INSIDE PROPS`, props);
+  const { highlight, trending, post } = props;
+  // console.log(`INSIDE HIGHLIGHT`, highlight);
+  // console.log(`INSIDE PROPS`, props);
 
   return (
     <div>
       <Header />
       <Hightlight highlight={highlight} />
-      <TrendingCards />
-      <AllBlogPost />
+      <TrendingCards trending={trending} />
+      <AllBlogPost post={post} />
       <Footer />
     </div>
   );
@@ -28,9 +28,17 @@ export const getServerSideProps = async () => {
   );
   const highlight = await highlights.json();
 
+  const trendings = await fetch("https://dev.to/api/articles?top=5");
+  const trending = await trendings.json();
+
+  const posts = await fetch("https://dev.to/api/articles?per_page=15");
+  const post = await posts.json();
+
   return {
     props: {
       highlight,
+      trending,
+      post,
     },
   };
 };
