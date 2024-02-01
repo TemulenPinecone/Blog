@@ -2,7 +2,7 @@ import { dummyData } from "@/data/dummyData";
 
 export const TrendingCards = (trending) => {
   const trend = trending.trending;
-  console.log(`trend income`, trend);
+  // console.log(`trend income`, trend);
   return (
     <div className="flex flex-col mt-16 px-3">
       <div>
