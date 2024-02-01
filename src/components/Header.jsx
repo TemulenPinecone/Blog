@@ -13,7 +13,11 @@ export const Header = () => {
         <a href="">Contact</a>
       </div>
       <div className="flex items-center bg-[#F4F4F5] px-3 py-1 rounded-md">
-        <input type="text" placeholder="Search" className="bg-[#F4F4F5]" />
+        <input
+          type="text"
+          placeholder="Search"
+          className="bg-[#F4F4F5] outline-none"
+        />
         <FindIcon />
       </div>
     </div>

@@ -1,17 +1,19 @@
 import { dummyData } from "@/data/dummyData";
 
-export const TrendingCards = () => {
+export const TrendingCards = (trending) => {
+  const trend = trending.trending;
+  console.log(`trend income`, trend);
   return (
     <div className="flex flex-col mt-16 px-3">
       <div>
         <p className="text-2xl font-bold">Trending</p>
       </div>
       <div className="flex justify-center items-center">
-        {dummyData.map((element) => (
+        {trend.map((element) => (
           <div className="mt-10 relative w-[25%] h-[200px] mx-[2px]">
             <img
               className="rounded-2xl w-[100%] h-[100%] object-cover"
-              src={element.cover_image}
+              src={element.social_image}
               alt=""
             />
             <div className="rounded-lg absolute bottom-[5%] left-[5%] flex flex-col justify-evenly px-3 pb-2">

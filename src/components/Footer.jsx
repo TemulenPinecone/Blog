@@ -6,7 +6,7 @@ import { MetaBlog, MetaBlogIcon } from "./icons/MetaBlogIcon";
 
 export const Footer = () => {
   return (
-    <div className="bg-[#F6F6F7] flex flex-col items-center pt-[64px] divide-y">
+    <div className="bg-[#F6F6F7] flex flex-col items-center pt-[64px] divide-y my-10">
       <div className="w-[80%] flex justify-between pb-[16px] ">
         <div className="w-[30%]">
           <div>

@@ -8,6 +8,7 @@ import { Footer } from "@/components/Footer";
 
 export default function Home(props) {
   const { highlight, trending, post } = props;
+  console.log(`post number`, post);
   // console.log(`INSIDE HIGHLIGHT`, highlight);
   // console.log(`INSIDE PROPS`, props);
 
@@ -24,14 +25,14 @@ export default function Home(props) {
 
 export const getServerSideProps = async () => {
   const highlights = await fetch(
-    "https://dev.to/api/articles?per_page=1&top=1"
+    "https://dev.to/api/articles?per_page=1&top=3"
   );
   const highlight = await highlights.json();
 
-  const trendings = await fetch("https://dev.to/api/articles?top=5");
+  const trendings = await fetch("https://dev.to/api/articles?per_page=4&top=4");
   const trending = await trendings.json();
 
-  const posts = await fetch("https://dev.to/api/articles?per_page=15");
+  const posts = await fetch("https://dev.to/api/articles?tag=design");
   const post = await posts.json();
 
   return {
