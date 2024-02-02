@@ -46,3 +46,6 @@ export const getServerSideProps = async () => {
     },
   };
 };
+
+// input - awna
+// awsan input- context- uur page ruu damjuulna
