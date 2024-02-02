@@ -13,7 +13,7 @@ export default function Home(props) {
   // console.log(`INSIDE PROPS`, props);
 
   return (
-    <div>
+    <div className="w-full">
       <Header />
       <Hightlight highlight={highlight} />
       <TrendingCards trending={trending} />
@@ -34,7 +34,7 @@ export const getServerSideProps = async () => {
   const trending = await trendings.json();
 
   const posts = await fetch(
-    "https://dev.to/api/articles?tag=design&per_page=3"
+    "https://dev.to/api/articles?tag=design&per_page=15"
   );
   const post = await posts.json();
 

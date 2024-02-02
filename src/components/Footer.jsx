@@ -6,22 +6,26 @@ import { MetaBlog, MetaBlogIcon } from "./icons/MetaBlogIcon";
 
 export const Footer = () => {
   return (
-    <div className="bg-[#F6F6F7] flex flex-col items-center pt-[64px] divide-y my-10">
+    <div className="bg-black flex flex-col items-center pt-[64px] divide-y mt-10">
       <div className="w-[80%] flex justify-between pb-[16px] ">
-        <div className="w-[30%]">
-          <div>
-            <p className="font-bold">About</p>
-            <p>
+        <div className="w-[30%] text-white">
+          <div className="flex flex-col gap-2 mb-3">
+            <p className="font-normal">About</p>
+            <p className="font-thin">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
               ad aperiam voluptatem aliquid quisquam deleniti?
             </p>
           </div>
-          <div>
-            <p>Email : info@jstemplate.net</p>
-            <p>Phone : 880 123 456 789</p>
+          <div className="font-thin">
+            <p>
+              <span className="font-normal">Email : </span>info@jstemplate.net
+            </p>
+            <p>
+              <span className="font-normal">Phone : </span>880 123 456 789
+            </p>
           </div>
         </div>
-        <div>
+        <div className="flex flex-col justify-between items-center">
           <div>Home</div>
           <div>Blog</div>
           <div>Contact</div>
@@ -33,13 +37,12 @@ export const Footer = () => {
           <LinkedIn />
         </div>
       </div>
-      <div className="w-[80%] flex justify-between pt-[16px] pb-[64px]">
+      <div className="w-[80%] flex justify-between pt-[16px] pb-[64px] font-thin text-white">
         <div className="flex gap-2">
           <MetaBlogIcon />
           <div>
-            {" "}
             <p>
-              Meta<span className="font-bold">Blog</span>
+              Meta<span className="font-normal">Blog</span>
             </p>
             <p>© All Rights Reserved.</p>
           </div>
