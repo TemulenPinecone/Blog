@@ -24,9 +24,10 @@ export default function Home(props) {
 }
 
 export const getServerSideProps = async () => {
-  const highlights = await fetch(
-    "https://dev.to/api/articles?per_page=4&top=1"
-  );
+  // const highlights = await fetch(
+  //   "https://dev.to/api/articles?per_page=4&top=1"
+  // );
+  const highlights = await fetch("http://localhost:4000/api/blogs");
   const highlight = await highlights.json();
   console.log(`HIGHLIGHT`, highlight);
 
