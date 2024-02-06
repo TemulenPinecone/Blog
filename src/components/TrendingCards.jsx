@@ -1,8 +1,6 @@
-import { dummyData } from "@/data/dummyData";
-
 export const TrendingCards = (trending) => {
   const trend = trending.trending;
-  // console.log(`trend income`, trend);
+
   return (
     <div className="flex justify-center mt-16">
       <div className="w-[80%] flex flex-col items-center">

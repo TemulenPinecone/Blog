@@ -1,4 +1,3 @@
-import { dummyData } from "@/data/dummyData";
 import React, { useState } from "react";
 
 export const AllBlogPost = (post) => {
