@@ -1,19 +1,16 @@
-import { Header } from "@/components/Header";
 import { Hightlight } from "@/components/Highlight";
 import { TrendingCards } from "@/components/TrendingCards";
 import { AllBlogPost } from "@/components/AllBlogPost";
-import { Footer } from "@/components/Footer";
 
 export default function Home(props) {
+  console.log(`HOME-n props`, props);
   const { highlight, trending, post } = props;
 
   return (
     <div className="w-full">
-      <Header />
       <Hightlight highlight={highlight} />
       <TrendingCards trending={trending} />
       <AllBlogPost post={post} />
-      <Footer />
     </div>
   );
 }
