@@ -35,27 +35,29 @@ export const AllBlogPost = (post) => {
         {/* POST CARDS */}
         <div className="grid grid-cols-3 gap-3">
           {posts.map((element, index) => (
-            <div className="mt-10 h-[400px] border rounded-2xl px-3 pt-3">
-              <div>
-                <img
-                  className="rounded-2xl w-[100%] h-[80%]"
-                  src={element.social_image}
-                  alt=""
-                />
-              </div>
-              <div className="rounded-lg flex flex-col justify-evenly mt-3">
-                <div className="mb-2">
-                  <p className="rounded-lg text-[#4B6BFB] font-thin inline-flex p-1 px-4 bg-gray-100">
-                    {element.tag_list[1]}
-                  </p>
-                </div>
+            <a href={`./article/${element.id}`}>
+              <div className="mt-10 h-[400px] border rounded-2xl px-3 pt-3">
                 <div>
-                  <h2 className="text-[20px] font-thin text-white">
-                    {element.title}
-                  </h2>
+                  <img
+                    className="rounded-2xl w-[100%] h-[80%]"
+                    src={element.social_image}
+                    alt=""
+                  />
+                </div>
+                <div className="rounded-lg flex flex-col justify-evenly mt-3">
+                  <div className="mb-2">
+                    <p className="rounded-lg text-[#4B6BFB] font-thin inline-flex p-1 px-4 bg-gray-100">
+                      {element.tag_list[1]}
+                    </p>
+                  </div>
+                  <div>
+                    <h2 className="text-[20px] font-thin text-white">
+                      {element.title}
+                    </h2>
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

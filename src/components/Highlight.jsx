@@ -8,8 +8,13 @@ export function Hightlight(highlight) {
         {/* NEW */}
         <div className="carousel w-full rounded-2xl">
           {hlNews.map((element, index) => (
-            <div id={`item${index + 1}`} className="carousel-item w-full">
-              <img src={element.social_image} className="w-full" />
+            <div
+              id={`item${index + 1}`}
+              className="carousel-item bg-cover w-[100%]"
+            >
+              <a href={`./article/${element.id}`}>
+                <img src={element.social_image} className="bg-cover w-[100%]" />
+              </a>
             </div>
           ))}
         </div>

@@ -6,6 +6,7 @@ const Blog = (post) => {
   const [posts, setPosts] = useState(allBlog);
   const [pageNumber, setPageNumber] = useState(2);
   const [loading, setLoading] = useState(false);
+  console.log(`POSTS`, posts);
 
   async function loadMoreHandler() {
     setLoading(true);
@@ -36,27 +37,40 @@ const Blog = (post) => {
         {/* POST CARDS */}
         <div className="grid grid-cols-3 gap-3">
           {posts.map((element, index) => (
-            <div className="mt-10 h-[400px] border rounded-2xl px-3 pt-3">
-              <div>
-                <img
-                  className="rounded-2xl w-[100%] h-[80%]"
-                  src={element.social_image}
-                  alt=""
-                />
-              </div>
-              <div className="rounded-lg flex flex-col justify-evenly mt-3">
-                <div className="mb-2">
-                  <p className="rounded-lg text-[#4B6BFB] font-thin inline-flex p-1 px-4 bg-gray-100">
-                    {element.tag_list[1]}
-                  </p>
-                </div>
+            <a href={`./article/${element.id}`}>
+              <div className="mt-10 h-[400px] border rounded-2xl px-3 pt-3">
                 <div>
-                  <h2 className="text-[20px] font-thin text-white">
-                    {element.title}
-                  </h2>
+                  <img
+                    className="rounded-2xl w-[100%] h-[80%]"
+                    src={element.social_image}
+                    alt=""
+                  />
+                </div>
+                <div className="rounded-lg flex flex-col justify-evenly mt-3">
+                  <div className="mb-2">
+                    <p className="rounded-lg text-[#4B6BFB] font-thin inline-flex p-1 px-4 bg-gray-100">
+                      {element.tag_list[1]}
+                    </p>
+                  </div>
+                  <div>
+                    <h2 className="text-[20px] font-thin text-white">
+                      {element.title}
+                    </h2>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="avatar">
+                      <div className="w-12 rounded-full">
+                        <img src={element.user.profile_image} />
+                      </div>
+                    </div>
+                    <div className="flex items-center">{element.user.name}</div>
+                    <div className="flex items-center">
+                      {element.created_at}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

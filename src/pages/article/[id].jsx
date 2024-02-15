@@ -10,15 +10,11 @@ export default function Page({ data }) {
     </div>
   );
 }
-
 export const getServerSideProps = async (context) => {
-  console.log(`CONTEXT`, context);
   const { query } = context;
   const { id } = query;
   const response = await fetch(`https://dev.to/api/articles/${id}`);
   const data = await response.json();
-  //   console.log(`DATA`, data);
-
   return {
     props: {
       data,
