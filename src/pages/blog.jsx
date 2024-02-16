@@ -1,9 +1,9 @@
 import { AllBlogPost } from "@/components/AllBlogPost";
 import React, { useState } from "react";
+import Link from "next/link";
 
-const Blog = (post) => {
-  const allBlog = post.post;
-  const [posts, setPosts] = useState(allBlog);
+const Blog = ({ post }) => {
+  const [posts, setPosts] = useState(post);
   const [pageNumber, setPageNumber] = useState(2);
   const [loading, setLoading] = useState(false);
   console.log(`POSTS`, posts);
@@ -33,20 +33,27 @@ const Blog = (post) => {
         <div className="flex justify-center">
           <p className="text-3xl font-extra-light text-white">All Blog Post</p>
         </div>
+        <div className="flex gap-3 items-center">
+          <button className="text-lg font-extra-light text-white">
+            <a href="./blog">All</a>
+          </button>
+          <a className="text-white" href={`./dynamicTag/tags`}>
+            Design
+          </a>
+        </div>
 
         {/* POST CARDS */}
         <div className="grid grid-cols-3 gap-3">
           {posts.map((element, index) => (
-            <a href={`./article/${element.id}`}>
-              <div className="mt-10 h-[400px] border rounded-2xl px-3 pt-3">
+            <a href={`./dynamic/${element.id}`}>
+              <div className="mt-10 border rounded-2xl px-3 py-3 gap-3 min-h-[400px]">
                 <div>
                   <img
-                    className="rounded-2xl w-[100%] h-[80%]"
+                    className="rounded-2xl w-[100%]"
                     src={element.social_image}
-                    alt=""
                   />
                 </div>
-                <div className="rounded-lg flex flex-col justify-evenly mt-3">
+                <div className="rounded-lg flex flex-col justify-between mt-3">
                   <div className="mb-2">
                     <p className="rounded-lg text-[#4B6BFB] font-thin inline-flex p-1 px-4 bg-gray-100">
                       {element.tag_list[1]}

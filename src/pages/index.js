@@ -3,7 +3,7 @@ import { TrendingCards } from "@/components/TrendingCards";
 import { AllBlogPost } from "@/components/AllBlogPost";
 
 export default function Home(props) {
-  console.log(`HOME-n props`, props);
+  // console.log(`HOME-n props`, props);
   const { highlight, trending, post } = props;
 
   return (

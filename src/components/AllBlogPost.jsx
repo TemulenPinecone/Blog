@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
-export const AllBlogPost = (post) => {
-  const allBlog = post.post;
-  const [posts, setPosts] = useState(allBlog);
+export const AllBlogPost = ({ post }) => {
+  const [posts, setPosts] = useState(post);
   const [pageNumber, setPageNumber] = useState(2);
   const [loading, setLoading] = useState(false);
 
@@ -35,8 +34,8 @@ export const AllBlogPost = (post) => {
         {/* POST CARDS */}
         <div className="grid grid-cols-3 gap-3">
           {posts.map((element, index) => (
-            <a href={`./article/${element.id}`}>
-              <div className="mt-10 h-[400px] border rounded-2xl px-3 pt-3">
+            <a href={`./dynamic/${element.id}`}>
+              <div className="mt-10 border rounded-2xl px-3 py-3">
                 <div>
                   <img
                     className="rounded-2xl w-[100%] h-[80%]"
@@ -55,6 +54,7 @@ export const AllBlogPost = (post) => {
                       {element.title}
                     </h2>
                   </div>
+                  <div className="flex items-center">{element.created_at}</div>
                 </div>
               </div>
             </a>
